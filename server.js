@@ -14,7 +14,8 @@ const port = process.env.PORT || 5000;
 // ------------------
 const allowedOrigins = [
   "http://localhost:3000",        // local dev
-  "https://buscity.netlify.app",  // your deployed frontend
+  "https://buscity.netlify.app",
+  "https://city-bus-neon.vercel.app/",  // your deployed frontend
 ];
 
 app.use(cors({
