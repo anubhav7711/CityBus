@@ -18,23 +18,24 @@ const allowedOrigins = [
   "https://city-bus-neon.vercel.app",  // your deployed frontend
 ];
 
-app.use(cors({
-  origin: function(origin, callback) {
-    // allow requests with no origin (like Postman)
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-}));
+// app.use(cors({
+//   origin: function(origin, callback) {
+//     // allow requests with no origin (like Postman)
+//     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["Content-Type", "Authorization"],
+//   credentials: true,
+// }));
 
 // Preflight requests for all routes
-app.options("*", cors());
+//app.options("*", cors());
 
+app.use(cors());
 // ------------------
 // Body parser
 // ------------------
